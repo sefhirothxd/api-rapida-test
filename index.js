@@ -9,10 +9,7 @@ const morgan = require('morgan');
 // defining the Express app
 const app = express();
 // defining an array to work as the database (temporary solution)
-const ads = [
-  {title: 'Hello, world (again)!'}
-];
-
+const port = process.env.PORT || 3001;
 // adding Helmet to enhance your Rest API's security
 app.use(helmet());
 
@@ -79,6 +76,6 @@ app.get('/', (req, res) => {
 });
 
 // starting the server
-app.listen(3001, () => {
-  console.log('listening on port 3001');
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });
